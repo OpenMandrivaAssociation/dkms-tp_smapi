@@ -15,6 +15,7 @@ Url:		http://heanet.dl.sourceforge.net/sourceforge/tpctl/
 Group:		Development/Kernel
 Requires(pre):	dkms
 Requires(post): dkms
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Buildarch:	noarch
 
 %description

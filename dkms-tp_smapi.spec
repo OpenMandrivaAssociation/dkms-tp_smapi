@@ -1,7 +1,7 @@
 %define	modname	tp_smapi
 %define	name	dkms-%{modname}
 %define	version	0.37
-%define	rel	1
+%define	rel	2
 %define	release	%mkrel %{rel}
 
 Name:		%{name}
@@ -11,6 +11,7 @@ Summary:	DKMS-ready module for SMAPI BIOS of ThinkPad laptops
 License:	GPL
 Source0:	%{modname}-%{version}.tgz
 Source1:	README.urpmi
+Source2:	kernel-2.6.27-semaphore_h.patch
 Url:		http://heanet.dl.sourceforge.net/sourceforge/tpctl/
 Group:		Development/Kernel
 Requires(pre):	dkms
@@ -51,7 +52,9 @@ cp %SOURCE1 .
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_usrsrc}/%{modname}-%{version}-%{release}
+mkdir -p %{buildroot}%{_usrsrc}/%{modname}-%{version}-%{release}/patches
 cp -a %{modname}-%{version}/* %{buildroot}%{_usrsrc}/%{modname}-%{version}-%{release}
+cp -a %SOURCE2 %{buildroot}%{_usrsrc}/%{modname}-%{version}-%{release}/patches/
 cat > %{buildroot}%{_usrsrc}/%{modname}-%{version}-%{release}/dkms.conf <<EOF
 
 PACKAGE_VERSION="%{version}-%{release}"
@@ -68,6 +71,8 @@ BUILT_MODULE_NAME[2]="hdaps"
 DEST_MODULE_LOCATION[2]="/kernel/drivers/hwmon"
 REMAKE_INITRD="no"
 AUTOINSTALL="YES"
+PATCH[0]=%(basename %SOURCE2)
+PATCH_MATCH[0]="2\.6\.27"
 EOF
 
 

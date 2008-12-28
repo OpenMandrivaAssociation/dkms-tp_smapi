@@ -1,7 +1,7 @@
 %define	modname	tp_smapi
 %define	name	dkms-%{modname}
-%define	version	0.37
-%define	rel	2
+%define	version	0.40
+%define	rel	1
 %define	release	%mkrel %{rel}
 
 Name:		%{name}
@@ -61,7 +61,7 @@ PACKAGE_VERSION="%{version}-%{release}"
 
 # Items below here should not have to change with each driver version
 PACKAGE_NAME="%{modname}"
-MAKE[0]="make -C \${dkms_tree}/\${PACKAGE_NAME}/\${PACKAGE_VERSION}/build KBASE=\${kernel_source_dir}/.. KSRC=\${kernel_source_dir} KBUILD=\${kernel_build_dir} HDAPS=1"
+MAKE[0]="make -C \${dkms_tree}/\${PACKAGE_NAME}/\${PACKAGE_VERSION}/build KBASE=\${kernel_source_dir}/.. KSRC=\${kernel_source_dir} KBUILD=\${kernel_source_dir} HDAPS=1"
 CLEAN="make -C \${dkms_tree}/\${PACKAGE_NAME}/\${PACKAGE_VERSION}/build clean"
 BUILT_MODULE_NAME[0]="\$PACKAGE_NAME"
 DEST_MODULE_LOCATION[0]="/extra"

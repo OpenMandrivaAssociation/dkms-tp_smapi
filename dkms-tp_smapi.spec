@@ -1,14 +1,14 @@
 %define	modname	tp_smapi
 %define	name	dkms-%{modname}
 %define	version	0.40
-%define	rel	1
+%define	rel	2
 %define	release	%mkrel %{rel}
 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Summary:	DKMS-ready module for SMAPI BIOS of ThinkPad laptops
-License:	GPL
+License:	GPLv2+
 Source0:	%{modname}-%{version}.tgz
 Source1:	README.urpmi
 Source2:	kernel-2.6.27-semaphore_h.patch

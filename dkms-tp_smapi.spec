@@ -1,7 +1,7 @@
 %define	modname	tp_smapi
 %define	name	dkms-%{modname}
 %define	version	0.40
-%define	release	%mkrel 3
+%define	release	%mkrel 4
 
 Name:		%{name}
 Version:	%{version}

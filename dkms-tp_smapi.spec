@@ -1,21 +1,20 @@
 %define	modname	tp_smapi
 %define	name	dkms-%{modname}
-%define	version	0.40
-%define	release	%mkrel 4
+%define	version	0.41
+%define	release	1
 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Summary:	DKMS-ready module for SMAPI BIOS of ThinkPad laptops
 License:	GPLv2+
-Source0:	%{modname}-%{version}.tgz
+Source0:	%{modname}-%{version}.tar.gz
 Source1:	README.urpmi
 Source2:	kernel-2.6.27-semaphore_h.patch
 Url:		http://heanet.dl.sourceforge.net/sourceforge/tpctl/
 Group:		Development/Kernel
 Requires(pre):	dkms
 Requires(post): dkms
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Buildarch:	noarch
 
 %description
@@ -49,7 +48,6 @@ cp %SOURCE1 .
 
 
 %install
-rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_usrsrc}/%{modname}-%{version}-%{release}
 mkdir -p %{buildroot}%{_usrsrc}/%{modname}-%{version}-%{release}/patches
 cp -a %{modname}-%{version}/* %{buildroot}%{_usrsrc}/%{modname}-%{version}-%{release}
@@ -91,12 +89,7 @@ EOF
 #fi
 
 
-%clean
-rm -rf %buildroot
-
-
 %files
-%defattr(-,root,root)
 %doc %{modname}-%{version}/{README,CHANGES,TODO} README.urpmi
 %docdir %{_usrsrc}/%{modname}-%{version}-%{release}/doc
 /usr/src/%{modname}-%{version}-%{release}

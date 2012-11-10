@@ -1,0 +1,4 @@
+sources:
+  "kernel-2.6.27-semaphore_h.patch:"	63daf70e107954fff78ed69fc4909950a12ad6d9
+  "README.urpmi:"	7f80adbcae6825741a59fa4bf03d61cf69f759ae
+  "tp_smapi-0.41.tar.gz:"	ab222a41a2773bfa8a67c4b74343655dca6fb8be

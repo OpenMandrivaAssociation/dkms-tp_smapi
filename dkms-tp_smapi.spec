@@ -93,3 +93,44 @@ EOF
 %doc %{modname}-%{version}/{README,CHANGES,TODO} README.urpmi
 %docdir %{_usrsrc}/%{modname}-%{version}-%{release}/doc
 /usr/src/%{modname}-%{version}-%{release}
+
+
+%changelog
+* Wed Dec 21 2011 Alexander Khrukin <akhrukin@mandriva.org> 0.41-1
++ Revision: 744103
+- version update
+
+* Sun Dec 05 2010 Oden Eriksson <oeriksson@mandriva.com> 0.40-4mdv2011.0
++ Revision: 610254
+- rebuild
+
+* Wed Mar 24 2010 Emmanuel Andry <eandry@mandriva.org> 0.40-3mdv2010.1
++ Revision: 527298
+- rebuild
+
+* Sat Feb 21 2009 Gustavo De Nardin <gustavodn@mandriva.com> 0.40-2mdv2009.1
++ Revision: 343703
+- fixed License tag
+
+* Sun Dec 28 2008 Gustavo De Nardin <gustavodn@mandriva.com> 0.40-1mdv2009.1
++ Revision: 320139
+- new version 0.40
+
+* Tue Sep 16 2008 Gustavo De Nardin <gustavodn@mandriva.com> 0.37-2mdv2009.0
++ Revision: 285108
+- add tiny patch to support building in kernel 2.6.27
+
+* Fri Aug 22 2008 Gustavo De Nardin <gustavodn@mandriva.com> 0.37-1mdv2009.0
++ Revision: 275137
+- new version 0.37
+
+* Tue Feb 19 2008 Gustavo De Nardin <gustavodn@mandriva.com> 0.36-1mdv2008.1
++ Revision: 172912
+- new version 0.36
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+

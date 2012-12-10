@@ -1,0 +1,4 @@
+This module provides an updated hdaps driver, which needs to be loaded for
+thinkpad_ec and tp_smapi modules to load. So, if you use hdaps, you need to
+unload it, then load tp_smapi. The new hdaps module will have replaced the
+old one and will be loaded on demand.

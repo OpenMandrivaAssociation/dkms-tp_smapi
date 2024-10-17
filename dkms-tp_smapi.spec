@@ -11,7 +11,7 @@ License:	GPLv2+
 Source0:	%{modname}-%{version}.tar.gz
 Source1:	README.urpmi
 Source2:	kernel-2.6.27-semaphore_h.patch
-Url:		http://heanet.dl.sourceforge.net/sourceforge/tpctl/
+Url:		https://heanet.dl.sourceforge.net/sourceforge/tpctl/
 Group:		Development/Kernel
 Requires(pre):	dkms
 Requires(post): dkms
